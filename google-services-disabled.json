@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "423968562708",
+    "project_id": "museumapplication-c48cc",
+    "storage_bucket": "museumapplication-c48cc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:423968562708:android:dcc5c6c8acd9ba1813d101",
+        "android_client_info": {
+          "package_name": "com.startup.museumapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVaiR4q8nqbLnIk7qKwQ-OUEVcOpcgUIQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

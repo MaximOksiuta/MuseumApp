@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
 }
 
 android {
@@ -9,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "com.startup.museumapp"
-        minSdk 25
+        minSdk 26
         targetSdk 34
         versionCode 1
         versionName "1.0"
@@ -24,6 +25,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.debug
         }
     }
     compileOptions {
@@ -50,13 +52,13 @@ dependencies {
 
     implementation 'androidx.core:core-ktx:1.12.0'
     implementation platform ('org.jetbrains.kotlin:kotlin-bom:1.8.0')
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.2'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
     implementation 'androidx.activity:activity-compose:1.8.2'
     implementation 'androidx.compose.ui:ui'
     implementation 'androidx.compose.ui:ui-graphics'
     implementation 'androidx.compose.ui:ui-tooling-preview'
-    implementation 'androidx.compose.material3:material3-android:1.2.0-beta01'
-    implementation 'androidx.compose.ui:ui-text-google-fonts:1.6.0-beta03'
+    implementation 'androidx.compose.material3:material3-android:1.2.0-beta02'
+    implementation 'androidx.compose.ui:ui-text-google-fonts:1.6.0-rc01'
     implementation platform('androidx.compose:compose-bom:2023.10.01')
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
@@ -71,4 +73,24 @@ dependencies {
 
     // Navigation
     implementation 'androidx.navigation:navigation-compose:2.7.6'
+
+
+    // Koin
+    def koin_version = "3.1.2"
+    implementation "io.insert-koin:koin-core:$koin_version"
+    implementation "io.insert-koin:koin-android:$koin_version"
+    // Koin testing
+    testImplementation "io.insert-koin:koin-test:$koin_version"
+
+    // Coil
+    implementation("io.coil-kt:coil-compose:2.2.2")
+    implementation("io.coil-kt:coil-svg:2.2.2")
+
+
+    // advanced shadow
+    implementation("com.github.GIGAMOLE:ComposeShadowsPlus:1.0.4") {
+        exclude group: "androidx.compose.material3", module: "material3"
+    }
+//    implementation 'com.github.alibardide5124:ComposeAdvancedShadow:1.0'
+   implementation ("com.google.accompanist:accompanist-pager:0.17.0")
 }
